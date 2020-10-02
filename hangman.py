@@ -14,6 +14,13 @@ print(f"""The hidden word is {len(hidden_word)} letters""")
 while guess_counter < 6:
     guess = input("Guess a letter. ")
 
+    # check if letter is in hidden_word
+    for char in hidden_word:
+        if guess != char in hidden_word:
+            print("incorrect guess")
+            guess_counter += 1
+
+
     if guess == hidden_word:
         print(hidden_word)
         print("You guessed the word, you win!")
